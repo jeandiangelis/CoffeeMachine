@@ -6,3 +6,4 @@ git commit -m "Initial Commit"
 git remote add origin ssh://git@bitbucket.check24.de:7999/~eugen.ganshorn/coffeemachine.git
 composer require maker --dev
 composer require annotations
+composer require symfony/phpunit-bridge --dev
