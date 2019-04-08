@@ -30,3 +30,4 @@ services:
         class: Monolog\Processor\PsrLogMessageProcessor
         tags:
             - { name: monolog.processor }
+
