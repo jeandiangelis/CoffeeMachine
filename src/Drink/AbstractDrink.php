@@ -2,7 +2,6 @@
 
 namespace App\Drink;
 
-
 abstract class AbstractDrink implements DrinkInterface
 {
     public const PROTOCOL_SEPARATOR = ':';
@@ -43,6 +42,6 @@ abstract class AbstractDrink implements DrinkInterface
 
     private function formattedSugar(): string
     {
-        return $this->sugarAmount > 0 ? $this->sugarAmount : '';
+        return $this->sugarAmount > 0 ? (string) $this->sugarAmount : '';
     }
 }

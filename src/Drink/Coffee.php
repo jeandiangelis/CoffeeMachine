@@ -2,8 +2,7 @@
 
 namespace App\Drink;
 
-
-class Coffee extends AbstractDrink implements DrinkInterface
+class Coffee extends AbstractDrink
 {
     protected function getCode(): string
     {

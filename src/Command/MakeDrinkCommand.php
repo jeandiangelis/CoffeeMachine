@@ -33,6 +33,5 @@ class MakeDrinkCommand extends Command
         $sugarAmount = $input->getOption('sugar');
         $factory = new DrinkFactory($type);
         $output->writeln((string)$factory->make((int)$sugarAmount));
-
     }
 }
