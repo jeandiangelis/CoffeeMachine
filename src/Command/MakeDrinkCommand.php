@@ -8,11 +8,10 @@ use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Console\Style\SymfonyStyle;
 
-class MakeCoffeeCommand extends Command
+class MakeDrinkCommand extends Command
 {
-    protected static $defaultName = 'make:coffee';
+    protected static $defaultName = 'make:drink';
 
     public function __construct($name = null)
     {
@@ -22,7 +21,7 @@ class MakeCoffeeCommand extends Command
     protected function configure()
     {
         $this
-            ->setDescription('This now will make you a coffee. A nice! I like!')
+            ->setDescription('This now will make you a drink. A nice! I like!')
             ->addArgument('type', InputArgument::OPTIONAL, 'Which drink do you want?')
             ->addOption('sugar', null, InputOption::VALUE_OPTIONAL, 'Do you want sugar?')
         ;

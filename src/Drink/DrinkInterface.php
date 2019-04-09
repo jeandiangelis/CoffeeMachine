@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Drink;
-
 
 interface DrinkInterface
 {
@@ -11,4 +9,5 @@ interface DrinkInterface
     public const CHOCOLATE = 'Choco';
 
     public function __toString(): string;
+    public function setSugarAmount(int $sugarAmount): void;
 }

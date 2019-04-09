@@ -10,6 +10,14 @@ use PHPUnit\Framework\TestCase;
 
 class DrinkFactoryTest extends TestCase
 {
+    public function invalidTypes()
+    {
+        yield 'Invalid random string' => ['INVALID_RANDOM_STRING'];
+        yield 'Invalid Tea(no ucfirst)' => ['tea'];
+        yield 'Invalid Coffee(space in between chars)' => ['c o f f e e'];
+        yield 'Invalid Choco(typo choco)' => ['chocoo'];
+    }
+
     public function testMakeCoffee()
     {
         $factory = new DrinkFactory('Coffee');
@@ -32,11 +40,12 @@ class DrinkFactoryTest extends TestCase
     }
 
     /**
+     * @dataProvider invalidTypes
      * @expectedException \InvalidArgumentException
      */
-    public function testInvalidType()
+    public function testInvalidType($type)
     {
-        $factory = new DrinkFactory('Vodka');
+        $factory = new DrinkFactory($type);
 
         $factory->make();
     }

@@ -2,7 +2,7 @@
 
 namespace App\Drink;
 
-class DrinkFactory
+class DrinkFactory implements DrinkFactoryInterface
 {
     /**
      * @var string
@@ -25,12 +25,12 @@ class DrinkFactory
     private function typeToClass(): AbstractDrink
     {
         $classmap = [
-            'Choco'     => new Choco(),
-            'Tea'       => new Tea(),
-            'Coffee'    => new Coffee(),
+            DrinkInterface::CHOCOLATE   => new Choco(),
+            DrinkInterface::TEA         => new Tea(),
+            DrinkInterface::COFFEE      => new Coffee(),
         ];
 
-        if (in_array($this->type, array_keys($classmap))) {
+        if (array_key_exists($this->type, $classmap)) {
             return $classmap[$this->type];
         }
 
